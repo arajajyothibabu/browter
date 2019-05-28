@@ -1,0 +1,7 @@
+/src/
+/test/
+/docs/
+.babelrc
+.gitignore
+*.spec.js
+rollup.config.babel.js

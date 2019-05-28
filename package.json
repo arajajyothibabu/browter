@@ -2,8 +2,18 @@
   "name": "browter",
   "version": "1.0.0",
   "description": "A simple light weight client side router for browsers.",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "module": "lib/index.js",
   "scripts": {
+    "build": "npm run prebuild && npm run build:es && npm run build:umd",
+    "build:es": "cross-env babel src -d lib --ignore \"**/*.test.js\" --copy-files",
+    "build:umd": "cross-env rollup -c rollup.config.babel.js",
+    "build:umd:min": "cross-env rollup -c rollup.config.babel.js",
+    "prebuild": "rimraf dist lib",
+    "release": "npm run build && npm publish",
+    "lint": "eslint ./src/**.js",
+    "coverage": "jest --coverage --config=conf/jest.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,5 +32,25 @@
   "bugs": {
     "url": "https://github.com/arajajyothibabu/browter/issues"
   },
-  "homepage": "https://github.com/arajajyothibabu/browter#readme"
+  "homepage": "https://github.com/arajajyothibabu/browter#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-stage-2": "^7.0.0",
+    "cross-env": "^5.2.0",
+    "rimraf": "^2.6.3",
+    "rollup": "^1.12.4",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-commonjs": "^10.0.0",
+    "rollup-plugin-node-resolve": "^5.0.0",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-uglify": "^6.0.2",
+    "@babel/plugin-proposal-class-properties": "^7.4.4"
+  },
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "unpkg": "dist/browter.js"
 }
