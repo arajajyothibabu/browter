@@ -1,0 +1,26 @@
+{
+  "name": "browter",
+  "version": "1.0.0",
+  "description": "A simple light weight client side router for browsers.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arajajyothibabu/browter.git"
+  },
+  "keywords": [
+    "router",
+    "browser",
+    "client",
+    "js",
+    "history"
+  ],
+  "author": "Jyothi Babu Araja",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arajajyothibabu/browter/issues"
+  },
+  "homepage": "https://github.com/arajajyothibabu/browter#readme"
+}
